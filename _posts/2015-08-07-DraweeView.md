@@ -113,4 +113,4 @@ tags : [fresco, android]
     }
 
 初始化这个类是```PipelineDraweeControllerFactory```的```newController()```new出来的,```newController```调用者是```PipelineDraweeControllerBuilder```的```obtainController()```,然后在调用的是```AbstractDraweeControllerBuilder```的```buildController()```,然后```build()```是最后的初始化
-[draweecontroller初始化](http://wlanjie.github.io/blog/image/draweeController_init.jpg)
+![draweecontroller初始化](http://wlanjie.github.io/blog/image/draweeController_init.jpg)
