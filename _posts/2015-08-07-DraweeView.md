@@ -7,7 +7,8 @@ tags : [fresco, android]
 ---
 {% include JB/setup %}
 #DraweeView分析
-这是```DraweeView```的解释.使用这个view必须设置```DraweeHierarchy```,创建```DraweeHierarchy```是一件耗时又耗资源的操作,所以每个```DraweeView```只就创建一次```DraweeHierarchy```,为了显示一个图片
+```SimpleDraweeView```继承```GenericDraweeView```继承```DraweeView```  
+使用这个view必须设置```DraweeHierarchy```,创建```DraweeHierarchy```是一件耗时又耗资源的操作,所以每个```DraweeView```只能创建一次```DraweeHierarchy```,为了显示一个图片
 必须调用```setController```设置```DraweeController```,这个虽然是```ImageView```的子类但是不支持setImageXxx和setScaleType方法,后面可能会直接继承自View所以避免使用ImageView的方法和属性
 
     private void init(Context context) {
@@ -113,4 +114,5 @@ tags : [fresco, android]
     }
 
 初始化这个类是```PipelineDraweeControllerFactory```的```newController()```new出来的,```newController```调用者是```PipelineDraweeControllerBuilder```的```obtainController()```,然后在调用的是```AbstractDraweeControllerBuilder```的```buildController()```,然后```build()```是最后的初始化
-![draweecontroller初始化](http://wlanjie.github.io/blog/image/draweeController_init.jpg)
+![draweecontroller初始化](http://wlanjie.github.io/blog/image/draweecontroller_and_datasource_init.jpg)
+上图是DraweeController和DataSourcer的初始化流程图
